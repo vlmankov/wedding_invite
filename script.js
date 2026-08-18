@@ -1,21 +1,36 @@
-const cover=document.getElementById('coverView');
-const inside=document.getElementById('insideView');
-const back=document.getElementById('backBtn');
-let opened=false;
+document.addEventListener("DOMContentLoaded", function () {
 
-function openInvite(){
- if(opened) return;
- opened=true;
- cover.classList.remove('active');
- inside.classList.add('active');
-}
+    const coverPage = document.getElementById("cover-page");
+    const insidePage = document.getElementById("inside-page");
+    const coverImage = coverPage.querySelector("img");
+    const backButton = document.getElementById("back-button");
 
-function closeInvite(){
- opened=false;
- inside.classList.remove('active');
- cover.classList.add('active');
-}
+    let isOpen = false;
 
-document.getElementById('coverImage').addEventListener('click', openInvite);
-back.addEventListener('click', closeInvite);
-setTimeout(openInvite,5000);
+    function openCard() {
+
+        if (isOpen) {
+            return;
+        }
+
+        isOpen = true;
+
+        coverPage.classList.remove("active");
+        insidePage.classList.add("active");
+    }
+
+    function closeCard() {
+
+        isOpen = false;
+
+        insidePage.classList.remove("active");
+        coverPage.classList.add("active");
+    }
+
+    coverImage.addEventListener("click", openCard);
+
+    backButton.addEventListener("click", closeCard);
+
+    setTimeout(openCard, 5000);
+
+});
