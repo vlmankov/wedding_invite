@@ -1,5 +1,0 @@
-body{margin:0;background:#f5efe7;display:flex;justify-content:center;align-items:center;min-height:100vh}
-.container{position:relative;width:min(95vw,700px)}
-.page{display:none;width:100%;height:auto;border-radius:8px}
-.page.active{display:block}
-#backBtn{display:none;position:fixed;bottom:20px;left:50%;transform:translateX(-50%);padding:10px 18px}
